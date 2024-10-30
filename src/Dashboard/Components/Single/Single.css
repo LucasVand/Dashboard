@@ -1,0 +1,175 @@
+.singleCont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0em 1em;
+
+
+}
+
+.singleWidth {
+    width: 15em;
+
+}
+
+.singleHeight {
+    height: 6em;
+}
+
+.singleTopText {
+    font-size: 0.6em;
+    color: rgb(215, 215, 215);
+    font-weight: 400;
+
+}
+
+
+.singleMainText {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 90%;
+}
+
+.singleImg {
+
+    height: 2em;
+    width: 2em;
+    padding: 0.5em;
+
+    background-color: rgb(30, 36, 56);
+
+    border-radius: 1em;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+
+
+
+
+}
+
+.ringOuter {
+    width: 12em;
+    height: 12em;
+    border-radius: 10em;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+
+    box-sizing: border-box;
+
+
+}
+
+.ringInter {
+    position: absolute;
+    width: 79.5%;
+    height: 79.5%;
+    border-radius: 10em;
+    background-color: rgb(22, 26, 39);
+
+}
+
+.ringText {
+    position: absolute;
+    font-weight: 700;
+    font-size: 2em;
+    z-index: 100;
+}
+
+.bottomChopper {
+    position: relative;
+    background-color: rgb(22, 26, 39);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transform: rotate(45deg);
+    top: 40%;
+
+
+}
+
+.overflowHidder {
+    position: absolute;
+    left: 0;
+    top: 64%;
+    background-color: rgb(22, 26, 39);
+    width: 100%;
+    height: 40%;
+    z-index: 2;
+}
+
+.ringCont {
+    position: relative;
+
+}
+
+
+
+.tryCont {
+    position: absolute;
+    width: 10.8%;
+    height: 10%;
+    background-color: rgb(22, 26, 39);
+    margin-top: 0.5em;
+    top: 80%;
+    z-index: 10;
+
+
+
+    border-style: solid;
+    border-color: rgb(22, 26, 39);
+    border-width: 1px;
+}
+
+.first {
+
+    position: absolute;
+    left: 3.0%;
+    top: 58%;
+    transform: rotate(-18deg);
+}
+
+.second {
+    position: absolute;
+    right: 2.8%;
+    top: 58%;
+    transform: rotate(18deg);
+}
+
+.try {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+.try::after {
+    content: '';
+    position: absolute;
+    left: -56%;
+    top: -90%;
+    width: 130%;
+    aspect-ratio: 1/1;
+    border-style: solid;
+    border-color: rgb(22, 26, 39);
+    border-width: 0.5em;
+    border-radius: 10em;
+
+}

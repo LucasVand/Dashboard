@@ -1,0 +1,83 @@
+.fileImg {
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0em 0.5em;
+}
+
+.fileItemCont {
+    width: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    height: 2.5em;
+    border-radius: 0.4em;
+    transition: background-color 0.35s;
+}
+
+.fileItemCont:Hover {
+    background-color: rgb(30, 36, 56);
+}
+
+.fileItemCont.toggle {
+    background-color: rgb(56, 69, 113);
+}
+
+.fileName {
+    width: 30%;
+    text-align: start;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-weight: 600;
+}
+
+.fileWritten {
+    width: 30%;
+    text-align: start;
+    font-size: 0.9em;
+}
+
+.fileSize {
+    width: 20%;
+    text-align: start;
+}
+
+.fileDivider {
+    width: 95%;
+    border-radius: 1em;
+    height: 1px;
+    background-color: rgb(44, 44, 44);
+    margin: 0.1em 1em;
+}
+
+.fileActionsCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.gone {
+    display: none;
+    opacity: 0;
+}
+
+.fileActionItem {
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
+    border-radius: 0.4em;
+
+    transition: scale 0.35s;
+}
+
+.fileActionItem:Hover {
+    scale: 1.02;
+    background-color: rgb(77, 86, 117);
+}
+
+.fileActionItem:active {
+    background-color: rgb(77, 86, 117) !important;
+    scale: 0.95;
+}

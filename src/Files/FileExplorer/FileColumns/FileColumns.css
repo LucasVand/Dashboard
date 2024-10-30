@@ -1,0 +1,24 @@
+.fileColumnsCont {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 93%;
+}
+
+.fileColumn {
+
+    font-weight: 700;
+}
+
+.fileColumn.size {
+
+    width: 20%
+}
+
+.fileColumn.name {
+    width: 30%;
+}
+
+.fileColumn.written {
+    width: 30%;
+}

@@ -1,0 +1,38 @@
+.topPathNavCont {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 1em 3em;
+    width: 80%;
+    height: 3em;
+}
+
+.topPathNavItem {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: 0.2em 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10em;
+    padding: 0.1em 0.4em;
+    transition: background-color 0.35s, scale 0.35s;
+}
+
+.topPathNavItem:hover {
+    background-color: rgb(41, 50, 77) !important;
+    scale: 1.01;
+}
+
+.topPathNavItem:active {
+    scale: 0.95;
+}
+
+.topPathNavItem.toggle {
+    background-color: rgb(30, 36, 56);
+}
+
+.topPathNavImg {
+    width: 0.7em;
+    height: 0.7em;
+}

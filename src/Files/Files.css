@@ -1,0 +1,36 @@
+.fileBG {
+
+    background-color: rgb(21, 26, 40);
+    border-radius: 0.8em;
+    color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.4em;
+
+    overflow: hidden;
+
+    position: relative;
+
+
+}
+
+.filesCont {
+
+    display: flex;
+
+    flex-direction: column;
+    margin: 0 0.5em;
+}
+
+.fileInnerCont {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}

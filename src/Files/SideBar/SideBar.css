@@ -1,0 +1,50 @@
+.filesSideBarCont {
+    height: 32em;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.sideBarTitle {
+    margin-top: 0.5em;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.sideBarDriveItem {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0em 1em;
+    border-radius: 0.4em;
+    width: 90%;
+    padding: 0.5em 0em;
+}
+
+.sideBarDriveItem.toggle {
+    background-color: rgb(39, 47, 73) !important;
+}
+
+.sideBarDriveItem:Hover {
+    background-color: rgb(30, 36, 56);
+}
+
+.sideBarDivider {
+    width: 90%;
+    border-radius: 1em;
+    height: 1px;
+    background-color: rgb(44, 44, 44);
+    margin: 0.3em 0;
+}
+
+.sideBarImg {
+    width: 1.0em;
+    height: 1.0em;
+    margin: 0em 0.1em;
+}
+
+.sideBarName {
+    font-size: 1em;
+}

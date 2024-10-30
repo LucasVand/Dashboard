@@ -1,0 +1,47 @@
+.navBarTopCont {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    margin: 7%;
+}
+
+.navBarTopItem {
+    font-size: 1.0em;
+    font-weight: 800;
+    display: flex;
+    margin: 0.5em;
+}
+
+.navBarTopItem.Closed {
+    justify-content: center;
+
+}
+
+.navBarTopImg {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 0.5em;
+}
+
+.navBarTopRestart {
+    margin: 0em 1em;
+    background-color: rgb(30, 36, 56);
+    padding: 0.2em;
+    border-radius: 0.4em;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+    cursor: pointer;
+
+    transition: scale 0.3s
+}
+
+.navBarTopRestart:hover {
+    scale: 1.05;
+}
+
+.navBarTopRestart:active {
+    scale: 0.98;
+}

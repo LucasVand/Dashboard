@@ -1,0 +1,35 @@
+.navBarCont {
+    position: fixed;
+    overflow-x: hidden;
+
+    top: 0;
+    left: 0;
+    background-color: rgb(21, 26, 40);
+
+    height: 100vh;
+    color: white;
+
+
+
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+    z-index: 100;
+
+    transition: width 0.3s;
+}
+
+
+.divider {
+    width: 95%;
+    border-radius: 1em;
+    height: 1px;
+    background-color: rgb(44, 44, 44);
+    margin: 1em 0em;
+}
+
+/* @media only screen and (max-width: 1040px) {
+    .navBarCont {
+        width: 4em !important;
+    }
+} */

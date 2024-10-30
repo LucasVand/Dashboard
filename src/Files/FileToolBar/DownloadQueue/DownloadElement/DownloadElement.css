@@ -1,0 +1,19 @@
+.downloadCont {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    width: 95%;
+}
+
+.downloadTitle {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.downloadUnder {
+    margin: 0.3em;
+    font-size: 0.7em;
+    font-weight: 500;
+}

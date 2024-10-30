@@ -1,0 +1,18 @@
+.fileActionItem {
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
+    border-radius: 0.4em;
+
+    transition: scale 0.35s;
+}
+
+.fileActionItem:Hover {
+    scale: 1.02;
+    background-color: rgb(77, 86, 117);
+}
+
+.fileActionItem:active {
+    background-color: rgb(77, 86, 117) !important;
+    scale: 0.95;
+}

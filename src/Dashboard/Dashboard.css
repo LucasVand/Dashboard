@@ -1,0 +1,55 @@
+.dashboardCont {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: row;
+    overflow-y: scroll;
+
+    transition: margin-left 0.3s;
+    height: 90vh;
+    width: 100%;
+
+}
+
+.dashboardBG {
+    background-color: rgb(21, 26, 40);
+    border-radius: 0.8em;
+    color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.8em;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+.dashboardLoading {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(50, 55, 68, 0.457);
+
+    z-index: 99;
+}

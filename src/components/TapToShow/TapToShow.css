@@ -1,0 +1,54 @@
+.tapToShowImg {
+    width: 80%;
+    height: 80%;
+}
+
+.tapToShowCont {
+    font-weight: 800;
+    padding: 0.2em;
+    background-color: rgb(30, 36, 56);
+    border-radius: 10em;
+    user-select: none;
+    aspect-ratio: 1/1;
+    height: 1.2em;
+    width: 1.2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transition: scale 0.35s;
+    z-index: 40;
+}
+
+.tapToShowItemsCont {
+    position: absolute;
+    left: 0%;
+    top: 130%;
+    font-size: 1em;
+    font-weight: 500;
+
+    background-color: rgb(30, 36, 56);
+    border-radius: 0.4em;
+    padding: 0.5em;
+    user-select: none;
+
+    min-width: 2em;
+    min-height: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.tapToShowClose {
+    width: 1em;
+    height: 1em;
+
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+}

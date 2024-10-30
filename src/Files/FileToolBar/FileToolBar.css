@@ -1,0 +1,11 @@
+.fileToolBarCont {
+    width: 92%;
+    height: 4em;
+    overflow: visible;
+}
+
+.fileToolBarImg {
+    width: 2em;
+    height: 2em;
+    padding: 0 1em;
+}

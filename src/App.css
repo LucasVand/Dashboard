@@ -1,0 +1,22 @@
+.content {
+    font-size: 1em;
+    overflow-y: hidden;
+}
+
+@media only screen and (max-width: 1040px) {
+    .content {
+        font-size: 1.0em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .content {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .content {
+        font-size: 0.65em;
+    }
+}

@@ -1,0 +1,33 @@
+.downloadQueueCont {
+    font-size: 1em;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.downloadQueueTitle {
+
+    font-size: 1.5em;
+    width: 95%;
+    text-align: start;
+}
+
+.noDownloads {
+    height: 3em;
+    width: 100%;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(69, 78, 94);
+}
+
+.downloadDivider {
+    width: 95%;
+    border-radius: 1em;
+    height: 1px;
+    background-color: rgb(44, 44, 44);
+    margin: 0.3em 1em;
+}

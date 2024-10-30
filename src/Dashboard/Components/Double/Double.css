@@ -1,0 +1,39 @@
+.doubleWidth {
+    width: 31.6em;
+}
+
+.doubleHeight {
+    height: 24.0em;
+}
+
+.doubleTitle {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.graphCont {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeFrameTitle {
+    font-size: 0.8em;
+    margin: 0.5em;
+    color: rgb(95, 95, 95);
+}
+
+.doubleSubTitle {
+    font-size: 0.6em;
+    color: rgb(215, 215, 215);
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+
+.doubleSubText {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 90%;
+}

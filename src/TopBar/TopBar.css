@@ -1,0 +1,61 @@
+.topBarCont {
+    position: fixed;
+    overflow-x: hidden;
+
+    top: 0;
+    left: 0;
+    background-color: rgb(21, 26, 40);
+    height: 3.5em;
+    width: 100vw;
+    color: white;
+
+    z-index: 101;
+
+
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topBarTitle {
+    font-size: 1em;
+    font-weight: 700;
+
+}
+
+.topBarImg {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0.1em 0.5em;
+    scale: 1;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+
+    cursor: pointer;
+}
+
+
+.topBarImg:hover {
+    scale: 1.05;
+}
+
+.topBarImg:active {
+    scale: 0.98
+}
+
+.topBarTitleCont {
+    display: flex;
+    overflow: hidden;
+    transition: width 0.3s;
+
+
+}
+
+.topBarSecCont {
+    display: flex;
+    align-items: center;
+}

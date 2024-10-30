@@ -1,0 +1,53 @@
+.hoverCont {
+    font-weight: 800;
+    padding: 0.2em;
+    background-color: rgb(30, 36, 56);
+    border-radius: 10em;
+    user-select: none;
+    aspect-ratio: 1/1;
+    height: 1.2em;
+    width: 1.2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 5%;
+    top: 4%;
+    transition: scale 0.35s;
+    z-index: 40;
+}
+
+.hoverImg {
+    width: 80%;
+    height: 80%;
+}
+
+.hoverCont:hover {
+    scale: 1.05;
+}
+
+.hoverInfoCont {
+    position: absolute;
+    left: 0%;
+    top: 130%;
+    font-size: 0.7em;
+    font-weight: 500;
+
+    background-color: rgb(30, 36, 56);
+    border-radius: 0.4em;
+    padding: 0.5em;
+    user-select: none;
+
+}
+
+.gone {
+    display: none;
+    opacity: 0;
+
+}
+
+.hoverItem {
+    text-wrap: nowrap;
+}
