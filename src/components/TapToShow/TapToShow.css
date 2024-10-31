@@ -1,26 +1,43 @@
 .tapToShowImg {
-    width: 80%;
-    height: 80%;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 1em;
+    aspect-ratio: 1/1;
+    background-color: rgb(30, 36, 56);
+    border-radius: 10em;
+    transition: scale 0.35s, background-color 0.35s;
+}
+
+.tapToShowImg.toggle {
+    background-color: rgb(39, 47, 73) !important;
+}
+
+.tapToShowImg:Hover {
+    background-color: rgb(39, 47, 73) !important;
+    scale: 1.08;
+}
+
+.tapToShowImg:Active {
+    background-color: rgb(39, 47, 73) !important;
+    scale: 0.95;
 }
 
 .tapToShowCont {
-    font-weight: 800;
-    padding: 0.2em;
-    background-color: rgb(30, 36, 56);
-    border-radius: 10em;
     user-select: none;
-    aspect-ratio: 1/1;
-    height: 1.2em;
-    width: 1.2em;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     position: absolute;
-    transition: scale 0.35s;
+
     z-index: 40;
+    border-style: solid;
+    border-width: 0px;
+    background-color: transparent;
 }
+
+
 
 .tapToShowItemsCont {
     position: absolute;
@@ -41,6 +58,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(44, 44, 44);
+
+    overflow: hidden;
+
+
 }
 
 
