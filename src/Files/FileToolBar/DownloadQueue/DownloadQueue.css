@@ -5,6 +5,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0.3em;
+
+    max-height: 25em;
+    overflow-y: scroll;
 }
 
 .downloadQueueTitle {

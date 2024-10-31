@@ -19,7 +19,7 @@ function SideBar(props: { drives: Drive[], changeDrive: Function, selectedDrive:
         return (
             <>
                 <div className={`sideBarDriveItem ${props.selectedDrive.driveLetter == drive.driveLetter ? 'toggle' : ''}`} onClick={() => { props.changeDrive(index) }} key={drive.id + "sidebaritem"}>
-                    <img src={ArrowIcon} className='sideBarImg' style={{ scale: "0.5" }}></img>
+                    <img src={ArrowIcon} className='sideBarImg' style={{ scale: "0.5" }} ></img>
                     <img src={DiskIcon} className='sideBarImg'></img>
                     <div style={{ width: '0.5em' }}></div>
                     <div className='sideBarName'>{name(drive)}</div>
@@ -28,6 +28,7 @@ function SideBar(props: { drives: Drive[], changeDrive: Function, selectedDrive:
             </>
         )
     })
+
     return (
         <>
             <div className='filesSideBarCont fileBG'>

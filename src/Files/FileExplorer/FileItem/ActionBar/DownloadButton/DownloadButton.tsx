@@ -2,19 +2,13 @@ import './DownloadButton.css'
 import DownloadIcon from './DownloadIcon.png'
 import { Directory, File } from '../../../../Classes'
 
-import { useDownloadContext } from '../../../../../DownloadContext'
-
-import DownloadElement from '../../../../FileToolBar/DownloadQueue/DownloadElement/DownloadElement'
-
-
+import { useDownloadContext } from '../../../../../HelperFunctions/DownloadContext'
 
 function DownloadButton(props: { child: File | Directory }) {
     const downloadContext = useDownloadContext()
 
     const downloadFile = () => {
-        const newDownload = <DownloadElement child={props.child} key={props.child.id}></DownloadElement>
-
-        downloadContext.setDownloads([...downloadContext.downloads, newDownload])
+        downloadContext.newDownload(props.child)
     }
     return (
         <>
