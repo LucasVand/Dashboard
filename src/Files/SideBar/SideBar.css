@@ -1,13 +1,17 @@
 .filesSideBarCont {
-    height: 32em;
-    width: 20%;
+    min-height: 5em;
     display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
+
+    height: 34em;
+
+    transition: height 0.35s;
 }
 
 .sideBarTitle {
+    margin-left: 0.5em;
     margin-top: 0.5em;
     font-size: 1.8em;
     font-weight: 700;
@@ -47,4 +51,48 @@
 
 .sideBarName {
     font-size: 1em;
+}
+
+.sideBarCollapseButton {
+    position: absolute;
+    left: 1em;
+    top: 1.0em;
+    transform: rotate(90deg);
+    animation: closedAnimation 0.35s ease-out both;
+    transition: scale 0.35s;
+    height: 2.0em;
+    width: 2.0em;
+    border-radius: 100em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideBarCollapseButton:hover {
+    scale: 1.1;
+    background-color: rgb(30, 36, 56);
+}
+
+.sideBarCollapseButton.open {
+    animation: openAnimation 0.35s ease-out both;
+}
+
+@keyframes openAnimation {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes closedAnimation {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
 }

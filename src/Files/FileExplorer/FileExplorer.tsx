@@ -12,6 +12,7 @@ function FileExplorer(props: { drive: Drive, setCurrentDir: Function, currentDir
     const [lastItemSelectedIndex, setLastItemSelectedIndex] = useState<number>(0)
     const [shiftStartIndex, setShiftStartIndex] = useState(-1)
     const [isShift, setIsShift] = useState(false)
+    const [isControl, setIsControl] = useState(false)
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyPressDown)
@@ -25,13 +26,18 @@ function FileExplorer(props: { drive: Drive, setCurrentDir: Function, currentDir
     }, [props, selectedItems, lastItemSelectedIndex, isShift])
 
     const handleKeyPressDown = (event: KeyboardEvent) => {
+
         if (event.shiftKey) {
             setIsShift(true)
+        }
+        if (event.ctrlKey || event.key === "Meta") {
+            setIsControl(true)
         }
 
         if (shiftStartIndex == -1) {
             setShiftStartIndex(lastItemSelectedIndex)
         }
+
 
 
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
@@ -52,17 +58,13 @@ function FileExplorer(props: { drive: Drive, setCurrentDir: Function, currentDir
                 props.setCurrentDir(props.currentDir.children[lastItemSelectedIndex])
             }
         }
-        if (event.key === 'ArrowLeft') {
-            if ('parent' in props.currentDir) {
-                props.setCurrentDir(props.currentDir.parent)
-            }
-        }
 
     }
 
     const changeSelectedItems = (item: Directory | File, keyDir: number) => {
 
         if (isShift) {
+
             var added: (Directory | File)[] = []
             const dir = item.index >= shiftStartIndex ? 1 : -1
             selectedItems.forEach(value => added.push(value))
@@ -82,7 +84,15 @@ function FileExplorer(props: { drive: Drive, setCurrentDir: Function, currentDir
             }
             setSelectedItems(added)
 
+        } else if (isControl) {
+
+            const isAlreadyIn = selectedItems.filter(value => value.id != item.id)
+
+            if (isAlreadyIn.length == 0) {
+                setSelectedItems([...selectedItems, item])
+            }
         } else {
+
             setSelectedItems([item])
             setShiftStartIndex(-1)
         }
@@ -118,15 +128,20 @@ function FileExplorer(props: { drive: Drive, setCurrentDir: Function, currentDir
         if (!event.shiftKey) {
             setIsShift(false)
         }
+        if (!event.ctrlKey || event.key === "Meta") {
+            setIsControl(false)
+        }
     }
 
     return (
         <>
             <div className='fileExplorerCont fileBG'>
-
+                {/* <div>{"selected Count: " + selectedItems.length}</div>
+                <div>{"Is control: " + isControl}</div>
+                <div>{"Is shift: " + isShift}</div> */}
                 <TopPathNav path={getPath()} changePath={props.setCurrentDir} currentDir={props.currentDir} ></TopPathNav>
                 <FileColumns></FileColumns>
-                <div className='filesCont'>
+                <div className='filesContFileExplorer'>
                     {files}
                     <div style={{ height: '3em' }}></div>
                 </div>

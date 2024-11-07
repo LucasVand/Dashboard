@@ -9,6 +9,9 @@ interface TopPathNavProps {
 
 
 function TopPathNav(props: TopPathNavProps) {
+
+    const amountOfFoldersShown = 3
+
     const allDirs = (): (Drive | Directory)[] => {
         var current = props.currentDir
         const returnArr: (Drive | Directory)[] = []
@@ -22,7 +25,6 @@ function TopPathNav(props: TopPathNavProps) {
     }
     const name = (item: Directory | Drive) => {
         if ("root" in item) {
-
             if (item.name.length != 0) {
                 return item.name
             } else {
@@ -34,19 +36,21 @@ function TopPathNav(props: TopPathNavProps) {
     }
 
     const paths = allDirs().map((item: Directory | Drive, index: number) => {
-        return (
-            <div
-                className={`topPathNavItem ${index == allDirs().length - 1 ? 'toggle' : ''}`}
-                key={item.name + "topnavpath" + index}
-                onClick={() => {
-                    props.changePath(item)
-                }}
-            >
-                {name(item)}
-                <span style={{ width: '0.4em' }}></span>
-                <img className='topPathNavImg' src={ArrowIcon}></img>
-            </div>
-        )
+        if (index >= allDirs().length - amountOfFoldersShown) {
+            return (
+                <div
+                    className={`topPathNavItem ${index == allDirs().length - 1 ? 'toggle' : ''}`}
+                    key={item.name + "topnavpath" + index}
+                    onClick={() => {
+                        props.changePath(item)
+                    }}
+                >
+                    {name(item)}
+                    <span style={{ width: '0.4em' }}></span>
+                    <img className='topPathNavImg' src={ArrowIcon}></img>
+                </div>
+            )
+        }
     })
 
     return (

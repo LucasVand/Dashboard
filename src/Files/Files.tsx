@@ -41,7 +41,6 @@ function Files() {
         getFileData()
     }, [])
     const changeSelectedDrive = (index: number) => {
-
         setSelectedDrive(drives[index])
         changeCurrentDir(drives[index])
     }
@@ -55,6 +54,7 @@ function Files() {
                     <SideBar drives={drives} changeDrive={changeSelectedDrive} selectedDrive={selecteddrive}></SideBar>
                     <FileExplorer drive={selecteddrive} setCurrentDir={changeCurrentDir} currentDir={currentDir}></FileExplorer>
                 </div>
+
             </div>
         </>
     )
@@ -71,21 +71,3 @@ function fixCircularRef(parent: Drive | Directory) {
         }
     })
 }
-
-// function setDownloaders(drive: Drive | Directory) {
-//     const downloadContext = useContext(DownloadContext)
-//     drive.children.forEach((child) => {
-
-//         const newDownload: Download = {
-//             progress: progress,
-//             setProgress: setProgress,
-//             downloading: downloading,
-//             setDownloading: setDownloading,
-//             id: child.id
-//         }
-//         downloadContext.setDownloads([...downloadContext.downloads, newDownload])
-//         if ('children' in child) {
-//             setDownloaders(child)
-//         }
-//     })
-// }

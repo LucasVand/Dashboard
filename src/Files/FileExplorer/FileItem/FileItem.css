@@ -8,7 +8,7 @@
     width: 93%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-items: start;
 
     height: 2.5em;
     border-radius: 0.4em;
@@ -23,8 +23,48 @@
     background-color: rgb(56, 69, 113);
 }
 
+.fileDropCont {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    .fileDropCont {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .fileItemCont {
+        height: 4em;
+    }
+
+    .fileImg {
+        height: 2.4em;
+        width: 2.4em;
+        padding-right: 0.5em;
+    }
+
+    .fileName {
+        font-size: 1.2em;
+        width: 100%;
+        text-wrap: nowrap;
+    }
+
+    .fileWritten {
+        font-size: 0.8em !important;
+    }
+
+    .fileSize {
+        font-size: 0.8em;
+    }
+}
+
 .fileName {
-    width: 30%;
+    width: 26.5%;
     text-align: start;
     display: flex;
     justify-content: start;
@@ -33,13 +73,13 @@
 }
 
 .fileWritten {
-    width: 30%;
+    width: 70%;
     text-align: start;
     font-size: 0.9em;
 }
 
 .fileSize {
-    width: 20%;
+    width: 30%;
     text-align: start;
 }
 
@@ -80,4 +120,12 @@
 .fileActionItem:active {
     background-color: rgb(77, 86, 117) !important;
     scale: 0.95;
+}
+
+.fileInfoCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }

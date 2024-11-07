@@ -1,6 +1,6 @@
 .fileToolBarCont {
-    width: 92%;
     height: 4em;
+    min-height: 4em;
     overflow: visible;
 }
 

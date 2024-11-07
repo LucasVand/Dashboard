@@ -7,7 +7,7 @@ function ActionBar(props: { selected: boolean, child: File | Directory }) {
 
     return (
         <>
-            <div className={props.selected ? `fileActionsCont` : 'gone'}>
+            <div className={props.selected ? `fileActionsCont` : 'goneFileActions'}>
                 <DownloadButton child={props.child}></DownloadButton>
             </div>
         </>

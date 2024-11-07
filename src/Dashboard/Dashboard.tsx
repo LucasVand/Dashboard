@@ -14,11 +14,11 @@ function Dashboard() {
         fetch('http://129.100.199.139:7000/dashboardAPI')
             .then((res) => res.json())
             .then((data: DashboardData) => {
-
-
                 setLoading(false)
-
                 setDashboardData(data)
+            })
+            .catch(err => {
+                console.log(err)
             })
     }
 
@@ -103,9 +103,9 @@ export class MemInfo {
 }
 const defaultDashBoardData: DashboardData = {
     cpu: {
-        averageLoad: 0,
-        numberOfCores: 0,
-        clockSpeed: 0,
+        averageLoad: 0.0,
+        numberOfCores: 0.0,
+        clockSpeed: 0.0,
 
     },
 

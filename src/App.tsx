@@ -34,7 +34,7 @@ function App() {
   const marginLeft = () => {
     if (windowSize[0] < 800) {
       if (windowSize[0] > 490) {
-        return 3.8
+        return 4.0
       } else {
         return 0
       }
@@ -42,7 +42,7 @@ function App() {
     if (navBarOpen) {
       return 16.6
     } else {
-      return 3.8
+      return 4.0
 
     }
 
@@ -74,7 +74,7 @@ function App() {
 
     const folder = 'children' in child ? true : false
 
-    const url: string = child.path + '/' + child.name
+    const url: string = replace(child.path + '/' + child.name, '+', '%2b')
     changeDownloading(true, index)
     fetch(`http://129.100.199.139:7000/Download?path=${url}&folder=${folder}`)
       .then((res) => {
@@ -112,6 +112,7 @@ function App() {
       })
       .then((response) => response.blob())
       .then((blob) => {
+        changeProgress(100, index)
         const url = window.URL.createObjectURL(new Blob([blob]));
         const link = document.createElement('a');
         link.href = url;
@@ -138,14 +139,13 @@ function App() {
     <>
       <DownloadContext.Provider value={{ downloading: downloading, progress: downloadProgress, child: downloadChild, newDownload, startTime: downloadStartTime }}>
         <div style={{ height: '100vh', width: '100vw' }}>
-
+          <div style={{ height: '50px' }}></div>
           <TopBar onClickOfIcon={changeNavBarState} navBarOpen={navBarOpen}></TopBar>
           <NavBar open={navBarOpen} changeOpen={changeNavBarState} changeSelected={changeSelected}></NavBar>
-          <div style={{ width: '100%', height: '3.0em' }}></div>
-          <div className='content' style={{ marginLeft: `${marginLeft()}em` }}>
+          <div className='content' style={{ marginLeft: `${marginLeft()}em`, width: `calc(100% - ${marginLeft()}em)` }}>
             {openWindow()}
           </div>
-          <div style={{ position: 'absolute', top: '5%', fontSize: '2em', zIndex: '1000' }}>{"downloads: " + downloading.length}</div>
+
 
 
         </div >
@@ -157,4 +157,10 @@ function App() {
 
 export default App
 
-
+function replace(input: string, remove: string, replace: string) {
+  var ret = input
+  while (ret.indexOf(remove) != -1) {
+    ret = ret.replace(remove, replace)
+  }
+  return ret
+}

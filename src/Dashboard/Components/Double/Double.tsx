@@ -15,6 +15,7 @@ interface DoubleProps {
     max: number
     unit: string
     decimals: number
+    timeToLoad: string
 }
 
 Chart.register(CategoryScale);
@@ -47,7 +48,7 @@ function Double(props: DoubleProps) {
         })
         return biggest
     }
-    const hoverItems: string[] = ["Data Points: " + props.values[selectedTimeFrameIndex].length]
+    const hoverItems: string[] = ["Data Points: " + props.values[selectedTimeFrameIndex].length, "Time To Load: " + props.timeToLoad]
     return (
         <>
             <div className='dashboardBG doubleHeight doubleWidth' style={{ flexDirection: "column" }}>

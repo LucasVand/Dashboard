@@ -4,11 +4,13 @@ import Double from "./Double";
 
 export function CPUDouble() {
     const [cpuLogs, setcpuLogs] = useState<CPUInfo[][]>([[]])
+    const [timeToLoad, SetTimeToLoad] = useState('Loading...')
     const getLogs = () => {
+        const time = Date.now()
         fetch('http://129.100.199.139:7000/loggingInfoCPU')
             .then((res) => res.json())
             .then((data: CPUInfo[][]) => {
-
+                SetTimeToLoad((Date.now() - time) + 'ms')
                 setcpuLogs(data)
 
             })
@@ -45,18 +47,20 @@ export function CPUDouble() {
         <>
 
 
-            <Double title={"CPU Load"} values={values()} times={times()} max={100} unit="%" decimals={2}></Double>
+            <Double title={"CPU Load"} values={values()} times={times()} max={100} unit="%" decimals={2} timeToLoad={timeToLoad}></Double>
         </>
     )
 }
 
 export function MemDouble() {
+    const [timeToLoad, SetTimeToLoad] = useState('Loading...')
     const [memLogs, setMemLogs] = useState<MemInfo[][]>([[]])
     const getLogs = () => {
+        const time = Date.now()
         fetch('http://129.100.199.139:7000/loggingInfoMem')
             .then((res) => res.json())
             .then((data: MemInfo[][]) => {
-
+                SetTimeToLoad((Date.now() - time) + 'ms')
                 setMemLogs(data)
 
             })
@@ -104,7 +108,7 @@ export function MemDouble() {
     return (
         <>
             <div></div>
-            <Double title={"Memory Load"} values={values()} times={times()} max={maxMem()} unit="gb" decimals={1}></Double>
+            <Double title={"Memory Load"} values={values()} times={times()} max={maxMem()} unit="gb" decimals={1} timeToLoad={timeToLoad}></Double>
         </>
     )
 }

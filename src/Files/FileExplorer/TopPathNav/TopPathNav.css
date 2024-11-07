@@ -33,6 +33,7 @@
 }
 
 .topPathNavImg {
-    width: 0.7em;
-    height: 0.7em;
+    width: 0.5em;
+    height: 0.5em;
+    opacity: 0.6;
 }

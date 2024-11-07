@@ -48,25 +48,35 @@ function FileItem(props: { child: (Directory | File), changeCurrentDir: Function
     const fileItem = () => {
         if ("children" in props.child) {
             return (
-                <div key={props.child.name + props.child.dateCreated} className={`fileItemCont ${props.selected ? 'toggle' : ''} `} onClick={() => { props.changeSelectedItems(props.child) }} onDoubleClick={() => { props.changeCurrentDir(props.child) }} onMouseEnter={() => { setHovered(true) }} onMouseLeave={() => { setHovered(false) }}  >
-                    <div className='fileName'>
-                        <img src={FolderIcon} className='fileImg'></img>
-                        <div>{props.child.name}</div>
+                <div key={props.child.name + props.child.dateCreated} className={`fileItemCont ${props.selected ? 'toggle' : ''} `} onClick={() => { props.changeSelectedItems(props.child) }} onDoubleClick={() => { props.changeCurrentDir(props.child) }} onMouseEnter={() => { setHovered(true) }} onMouseLeave={() => { setHovered(false) }} onContextMenu={(e) => e.preventDefault()} >
+
+                    <img src={FolderIcon} className='fileImg'></img>
+                    <div className='fileDropCont'>
+                        <div className='fileName'>{props.child.name}</div>
+
+                        <div className='fileInfoCont'>
+                            <div className='fileWritten'>{dateFormatter(props.child.lastWritten)}</div>
+                            <div className='fileSize'>{sizeFormatter(props.child.size)}</div>
+                        </div>
                     </div>
-                    <div className='fileWritten'>{dateFormatter(props.child.lastWritten)}</div>
-                    <div className='fileSize'>{sizeFormatter(props.child.size)}</div>
                     <ActionBar selected={hovered} child={props.child}></ActionBar>
                 </div >
             )
         } else {
             return (
-                <div onClick={() => { props.changeSelectedItems(props.child) }} key={props.child.name + props.child.dateCreated} className={`fileItemCont ${props.selected ? 'toggle' : ''} `} onMouseEnter={() => { setHovered(true) }} onMouseLeave={() => { setHovered(false) }}>
-                    <div className='fileName'>
-                        <img src={DocumentIcon} className='fileImg'></img>
-                        <div>{props.child.name}</div>
+                <div onClick={() => { props.changeSelectedItems(props.child) }} key={props.child.name + props.child.dateCreated} className={`fileItemCont ${props.selected ? 'toggle' : ''} `} onMouseEnter={() => { setHovered(true) }} onMouseLeave={() => { setHovered(false) }} onContextMenu={(e) => e.preventDefault()}>
+
+
+                    <img src={DocumentIcon} className='fileImg'></img>
+                    <div className='fileDropCont'>
+                        <div className='fileName'>{props.child.name}</div>
+
+                        <div className='fileInfoCont'>
+                            <div className='fileWritten'>{dateFormatter(props.child.lastWrite)}</div>
+                            <div className='fileSize'>{sizeFormatter(props.child.size)}</div>
+                        </div>
                     </div>
-                    <div className='fileWritten'>{dateFormatter(props.child.lastWrite)}</div>
-                    <div className='fileSize'>{sizeFormatter(props.child.size)}</div>
+
                     <ActionBar selected={hovered} child={props.child}></ActionBar>
                 </div >
             )
